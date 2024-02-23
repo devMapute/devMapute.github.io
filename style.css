@@ -35,7 +35,7 @@ header {
     padding: 2%;
 }
 
-
+/* nav bar flex box */
 nav ul {
     flex-direction: column;
     list-style: none;
@@ -48,16 +48,19 @@ nav li {
     margin-left: 2em;
 }
 
+/* remove bullet and recolor */
 nav a {
     text-decoration: none;
     color: #ff0000;
 }
 
+/* hover highlight animation */
 nav a:hover,
 nav a:focus {
   color: black;
 }
 
+/* nav bar container */
 .container-nav {
     background-color: #efefef;
     display: flex;
@@ -78,6 +81,8 @@ nav a:focus {
   
   }
 
+
+  /* image on top of the video of home */
 #landing img {
     position: absolute;
     max-width: 50%;
@@ -90,6 +95,7 @@ nav a:focus {
     
   }
 
+  /* highlight name */
   #landing span{
     color: #ff0000
   }
@@ -103,12 +109,12 @@ nav a:focus {
 
 .background_video {
     width: 100%;
-    height: 70vh; /* Set the desired height for the visible part of the video */
-    object-fit: cover; /* Cover the container with the video, maintaining aspect ratio */
-    object-position: 20% 50%; /* Adjust the position to show a specific part of the video */
+    height: 70vh; /* set the desired height for the visible part of the video */
+    object-fit: cover; /* cover the container with the video, maintaining aspect ratio */
+    object-position: 20% 50%; /* adjust the position to show a specific part of the video */
 }
 
-
+/* flex box  */
 .flex-container {
     display: flex;
     border-style: solid;
@@ -183,6 +189,7 @@ nav a:focus {
     }
 }
 
+/* contact footer */
 .ffooter{
     margin: 0;
     padding: 3%;
