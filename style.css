@@ -6,6 +6,10 @@
     
 }
 
+.margin{
+    margin-left: 80px;
+    margin-right: 80px;
+}
 
 
 .container{
@@ -15,7 +19,6 @@
 }
 
 header {
-    background-color: white;
     padding: 0.8em 0;
     box-shadow: 2px 2px 10px #f1f6f9;
 }
@@ -68,6 +71,8 @@ nav a:focus {
     border-width: 5px;
     border-color: red;
     flex-direction: row;
+    padding: 3%;
+    
 }
 .flex-item{
     
@@ -75,17 +80,26 @@ nav a:focus {
     border-style: solid;
     border-width: 3px;
     border-color: blue;
+    padding: 2%;
+    
 }
 .projects {
-    
+    padding: 3%;
     border-style: solid;
     border-width: 5px;
     border-color: blue;
     flex-direction: row;
 }
 
+@media screen and (max-width: 768px) {
+    /* Apply styles for screens with a width of 768 pixels or smaller */
+    .flex-container {
+        flex-direction: column; /* Change flex direction to column for smaller screens */
+    }
+}
 
 .ffooter{
+    padding: 3%;
     display: flex;
     border-style: solid;
     border-width: 5px;
