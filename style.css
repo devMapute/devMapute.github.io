@@ -93,7 +93,7 @@ nav a:focus {
     margin-left: 10%;
     position: absolute;
     font-size: larger;
-    margin-top: 20%;
+    margin-top: 25%;
 }
 
 .background_video {
@@ -108,7 +108,7 @@ nav a:focus {
     display: flex;
     border-style: solid;
     border-width: 5px;
-    border-color: red;
+    border-color: white;
     flex-direction: row;
     padding: 3%;
     
@@ -118,7 +118,7 @@ nav a:focus {
     flex-direction: column;
     border-style: solid;
     border-width: 3px;
-    border-color: blue;
+    border-color: white;
     padding: 2%;
     
 }
@@ -126,7 +126,7 @@ nav a:focus {
     padding: 3%;
     border-style: solid;
     border-width: 5px;
-    border-color: blue;
+    border-color: white;
     flex-direction: row;
 }
 
