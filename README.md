@@ -1,17 +1,25 @@
-# Portfolio Website - Andrae Mapute
+# Andrae Mapute's Portfolio
 
-## Introduction
+## Full Name
+Andrae Mapute
 
-Welcome to my one-page portfolio website created as part of CMSC100 UV-3L class activity number 2. I am Andrae Mapute, and this website serves as a showcase of my skills, projects, and experiences.
+## Degree Program
+BS Computer Science
 
-## Features
+## Live Website Link
+Visit my portfolio [here](https://devmapute.github.io/).
 
-- Clean and minimalist design
-- Showcase of my skills and expertise
-- Display of projects with brief descriptions
-- Contact information section
+## Steps to Create GitHub Page
+1. Create a new repository on GitHub.
+2. Name the repository with the following format: `<your-username>.github.io`.
+3. Add your HTML, CSS, and other relevant files to the repository.
+4. Commit and push your changes to the `main` branch.
+5. Your website will be live at `https://<your-username>.github.io/`.
 
-## Technologies Used
+## Key Takeaways
+- Enhanced my HTML, CSS, and GitHub skills.
+- Learned the process of creating and hosting a personal portfolio website on GitHub Pages.
 
-- HTML5
-- CSS3
+---
+
+*Created by Andrae Mapute for CMSC100 UV-3L Class Activity 2.*
