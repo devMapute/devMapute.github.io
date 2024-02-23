@@ -151,6 +151,10 @@ nav a:focus {
     padding: 4%;
 }
 
+#autobiography span{
+    color: #ee7171;
+}
+
 @media screen and (max-width: 768px) {
     /* Apply styles for screens with a width of 768 pixels or smaller */
     .flex-container {
