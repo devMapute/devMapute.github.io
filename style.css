@@ -111,6 +111,7 @@ nav a:focus {
     border-color: white;
     flex-direction: row;
     padding: 3%;
+    align-items: baseline;
     
 }
 .flex-item{
@@ -128,6 +129,26 @@ nav a:focus {
     border-width: 5px;
     border-color: white;
     flex-direction: row;
+}
+
+.projects img{
+    max-width: 300px;
+}
+
+.projects h2{
+    color: #ff0000;
+}
+
+.projects h1{
+    color: white;
+    background-color: rgb(251, 54, 54);
+    padding-left: 10px;
+}
+
+#autobiography{
+    color:white;
+    background-color: #000000;
+    padding: 4%;
 }
 
 @media screen and (max-width: 768px) {
