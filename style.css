@@ -79,10 +79,11 @@ nav a:focus {
 #landing img {
     position: absolute;
     top: 53%;
-    left: 85%;
+    left: 80%;
     transform: translate(-50%, -50%);
-    max-height: 70vh; 
-    overflow-x: hidden;
+    max-height: 80vh; 
+    
+    
   }
 
   #landing span{
@@ -155,6 +156,20 @@ nav a:focus {
     color: #ee7171;
 }
 
+#skills .border{
+    display: flex;
+    border-style: solid;
+    flex-direction: column;
+    border-color: #000000;
+    padding: 20px;
+    
+}
+#skills li {
+    list-style-type: none;
+    margin-left: 20px;
+  }
+
+
 @media screen and (max-width: 768px) {
     /* Apply styles for screens with a width of 768 pixels or smaller */
     .flex-container {
@@ -163,10 +178,16 @@ nav a:focus {
 }
 
 .ffooter{
+    margin: 0;
     padding: 3%;
     display: flex;
     border-style: solid;
-    border-width: 5px;
-    border-color: red;
+    border-width: 0px;
+    background-color: #000000;
+    border-color: white;
     flex-direction: row;
+}
+
+.ffooter .footer_text{
+    color: white;
 }
