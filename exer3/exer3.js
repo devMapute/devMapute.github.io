@@ -1,3 +1,7 @@
+// This program is able to validate if the passwords in the function parameter
+// follow a set of rules (does match, contains Upper and Lowercase characters,
+// has numbers, and is atleast 8 characters)
+
 // This function checks the string of password through a set of rules
 function stringPassword(password) {
   // Initialize variables to track character types found
