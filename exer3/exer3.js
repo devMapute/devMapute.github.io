@@ -39,14 +39,7 @@ function validatePassword(password, input_password){
     console.log("Success!");
     return true;
   }
-
-  
-
-
-
-
 }
-
 
 validatePassword("helloworld", "hello")     // returns false
 validatePassword("hello", "hello")    	  // returns false
@@ -54,5 +47,18 @@ validatePassword("hello1234", "hello1234")  // returns false
 validatePassword("Hello1234", "Hello1234")  // returns true
 validatePassword("HELLO1234", "HELLO1234")  // returns false
 
+
+function reversePassword(password){
+
+  var reversedPassword = "";
+
+  for (var i = password.length -1; i >=0; i--){
+    reversedPassword += password[i];
+  }
+  // console.log(reversedPassword)
+  return reversedPassword;
+}
+
+reversePassword("Hello");
 
 
