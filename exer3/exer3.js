@@ -1,70 +1,81 @@
-function containsUppercase(password) {
-  return password?.match(/[A-Z]/)
-}
-function containsLowercase(password) {
-  return password?.match(/[a-z]/)
-}
-function containsNumber(password) {
-  return password?.match(/[0-9]/)
-}
+// This function checks the string of password through a set of rules
+function stringPassword(password) {
+  // Initialize variables to track character types found
+  let hasUppercase = false;
+  let hasLowercase = false;
+  let hasNumber = false;
 
 
+  // Loop through each character in the password
+  for (const char of password) {
+    const charCode = char.charCodeAt(0); // Make each char its Unicode
+
+    // Check character type using character codes
+    if (charCode >= 65 && charCode <= 90) { // Uppercase letters (A-Z)
+      hasUppercase = true;
+    } else if (charCode >= 97 && charCode <= 122) { // Lowercase letters (a-z)
+      hasLowercase = true;
+    } else if (charCode >= 48 && charCode <= 57) { // Numbers (0-9)
+      hasNumber = true;
+    }
+    // Early exit if all character types are found, optimizing performance
+    if (hasUppercase && hasLowercase && hasNumber) {
+      return true;
+    }
+  }
+
+  // Return false if not all character types are found
+  return false;
+}
+
+// Validate password if it follows the set of rules
 function validatePassword(password, input_password){
-  if(password != input_password){
+  if(password != input_password){ // Check if the two parameters are not equal
     // console.log("Passwords do not match") ;
     return false;
   }
 
-  else if(password.length < 8 || input_password.length <8){
+  else if(password.length < 8 || input_password.length <8){ // Check if the parameters are less than 8 characters 
     // console.log("Must be more than 8 characters!") ;
     return false;
   }
 
-  else if(!containsUppercase(password)){
-    // console.log("Need atleast 1 uppercase")
+  else if (!stringPassword(password)){ // Calls the stringPassword Function
+    // console.log("Password has to have at least 1 number, 1 uppercase character, and 1 lowercase character");
     return false;
   }
 
-  else if(!containsLowercase(password)){
-    // console.log("Need atleast 1 lowercase")
-    return false
-  }
-
-  else if(!containsNumber){
-    // console.log("Need atleast 1 number")
-    return false;
-  }
-
-  else{
+  else{ // Passwords match and follow the rules
     // console.log("Success!");
     return true;
   }
 }
 
-
+// Uses a loop to reverse a password string
 function reversePassword(password){
 
-  var reversedPassword = "";
+  var reversedPassword = ""; // Init
 
-  for (var i = password.length -1; i >=0; i--){
+  for (var i = password.length -1; i >=0; i--){ // Loops from the last index to the first
     reversedPassword += password[i];
   }
   // console.log(reversedPassword)
   return reversedPassword;
 }
 
-function storePassword(name, pass1, pass2){
-  const account = {
+// Stores the parameters to an object
+function storePassword(name, pass1, pass2){ 
+  const account = { // Init
     name: name,
     password: ""
   }
 
-  if (validatePassword(pass1, pass2)){
-    account.password = reversePassword(pass1);
+  if (validatePassword(pass1, pass2)){ // Passwords follow the set of conditions
+    account.password = reversePassword(pass1); // Reverse Password
     return account;
   }
 
-  account.password = pass1;
+  account.password = pass1; // Use pass1 if passwords do not follow the conditions
   return account;
 
 
