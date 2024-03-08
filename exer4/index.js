@@ -1,4 +1,4 @@
-// This js adds an account to file named users.txt.
+// This js adds an account info to a file named users.txt. It uses fs, uuid, and validator 
 
 
 import * as fs from 'fs';
