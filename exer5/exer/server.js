@@ -7,7 +7,6 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-
 app.post('/add-book', (req, res) => {
   if (
     req.body.bookName === '' ||
@@ -30,7 +29,6 @@ app.post('/add-book', (req, res) => {
     }
   });
 });
-
 
 app.get('/find-by-isbn-author', (req, res) => {
   const { isbn, author } = req.query;
