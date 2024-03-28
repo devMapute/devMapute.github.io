@@ -11,8 +11,8 @@ This project implements a user management system using Express, Mongoose, Needle
 1. Install Node.js and MongoDB Compass.
 2. Clone this repository.
 3. Run `npm install` to install dependencies.
-4. Start the server by running `npm start`.
-5. Use a tool like Postman or make HTTP requests directly to interact with the endpoints.
+4. Start the server by running `node index.js`.
+5. Make HTTP requests on the `request.js` to interact with the endpoints.
 
 ### Example Requests
 ```javascript
