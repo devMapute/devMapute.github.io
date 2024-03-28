@@ -24,7 +24,7 @@ const saveStudent = async (req, res) => {
         fname, 
         lname, 
         age: parseInt(age)
-    },{ versionKey: false });
+    });
 
     try {
         await newStudent.save(); 
