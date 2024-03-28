@@ -42,7 +42,7 @@ import needle from 'needle';
 // });
 
 
-needle.post('http://localhost:3000/update', {fname: 'Mary Jane', new_lname:'Parker'}, (err, res) => {
+needle.post('http://localhost:3000/update', {fname: 'Mary Jane', newValues: {lname:'Jones', age:10}}, (err, res) => {
   if (err) {
     console.error(err);
   } else {

@@ -37,13 +37,13 @@ const saveStudent = async (req, res) => {
 }
 
 const update = async (req, res) => {
-    const { fname, new_lname } = req.body;
+    const { fname, newValues } = req.body;
 
     try {
         const existingStudent = await Student.findOne({ fname: fname });
 
         if (existingStudent) {
-            await Student.updateOne({ fname: fname }, { $set: { lname: new_lname } });
+            await Student.updateOne({ fname: fname }, { $set: newValues });
             res.json({ updated: true });
         } else {
             res.json({ updated: false, error: `Student with fname '${fname}' not found` });
