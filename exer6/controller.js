@@ -16,21 +16,6 @@ const homepage = (req,res) => {
 }
 
 
-// const saveStudent = (req, res) =>{
-//     const {stdnum, fname, lname, age} = req.query;
-
-//     const newStudent = new Student({
-//         stdnum: parseInt(stdnum), 
-//         fname, 
-//         lname, 
-//         age: parseInt(age)
-//     });
-
-//     newStudent.save();
-
-// }
-
-
 const saveStudent = async (req, res) => {
     const { stdnum, fname, lname, age } = req.body;
 
@@ -51,5 +36,24 @@ const saveStudent = async (req, res) => {
     }
 }
 
+const update = async (req, res) => {
+    const { fname, new_lname } = req.body;
 
-export {saveStudent, homepage}
+    try {
+        const existingStudent = await Student.findOne({ fname: fname });
+
+        if (existingStudent) {
+            await Student.updateOne({ fname: fname }, { $set: { lname: new_lname } });
+            res.json({ updated: true });
+        } else {
+            res.json({ updated: false, error: `Student with fname '${fname}' not found` });
+        }
+    } catch (error) {
+        console.error('Error updating student:', error);
+        res.json({ updated: false, error: 'An error occurred while updating the student' });
+    }
+}
+
+
+
+export {saveStudent, update, homepage}
