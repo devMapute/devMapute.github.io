@@ -96,5 +96,14 @@ const user = async (req, res) => {
     }
 };
 
+const members = async (req,res) =>{
+    try {
+        const allStudents = await Student.find({});
+        res.json(allStudents);
+    }catch (error) {
+        console.error('Error searching students', error);
+        res.json({ error: 'An error occurred while finding students' });
+    }
+};
 
-export {saveStudent, update, removeUser, removeAllUser, user, homepage}
+export {saveStudent, update, removeUser, removeAllUser, user, members, homepage}

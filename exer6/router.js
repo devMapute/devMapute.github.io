@@ -1,4 +1,4 @@
-import {saveStudent, update, removeUser, removeAllUser, user, homepage} from './controller.js'
+import {saveStudent, update, removeUser, removeAllUser, user, members, homepage} from './controller.js'
 
 
 const router = (app) =>{
@@ -9,7 +9,7 @@ const router = (app) =>{
     app.post('/remove-user',removeUser);
     app.post('/remove-all-user', removeAllUser);
     app.get('/user',user)
-    // app.get('/members',members);
+    app.get('/members',members);
 
 }
 
