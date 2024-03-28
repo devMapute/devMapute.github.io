@@ -5,7 +5,7 @@ import mongoose from 'mongoose';
 await mongoose.connect('mongodb://127.0.0.1:27017/ICS', { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Subject model
-const Student = mongoose.model('Student', {
+const Student = mongoose.model('student', {
   stdnum: String,
   fname: String,
   lname: String,
@@ -13,7 +13,7 @@ const Student = mongoose.model('Student', {
 })
 
 
-let data = await Student.findOne({ age: 17 });
+let data = await Student.findOne({ fname: "John"});
 
 let stud = await Student.findOne({ age: 65});
 // console.log(stud);
@@ -21,10 +21,10 @@ let stud = await Student.findOne({ age: 65});
 // await stud.save();
 
 // updates a single document and returns an object containing the result details (NOT the document).
-await Student.updateOne(
-  { age: 17 },
-  {$set: {fname: "John"}}
-);
+// await Student.updateOne(
+//   { age: 17 },
+//   {$set: {fname: "John"}}
+// );
 console.log(stud);
 
 
@@ -37,3 +37,23 @@ console.log(stud);
 // results here will always be an array, regardless of how many matching documents were found
 // let data = await Student.find({ age: 17 });
 console.log(data);
+
+
+// const newStudent = new Student({
+//   stdnum: "12345678",
+//   fname: "Juan",
+//   lname: "dela Cruz",
+//   age: 20
+// });
+
+// await newStudent.save();
+
+
+// await Student.updateOne(
+//   { age: 17 },
+//   {$set: {fname: "John"}}
+// );
+
+
+
+await Student.deleteMany({ fname: "Juan", lname: "dela Cruz" })
