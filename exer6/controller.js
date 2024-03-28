@@ -53,7 +53,34 @@ const update = async (req, res) => {
         res.json({ updated: false, error: 'An error occurred while updating the student' });
     }
 }
+const removeUser = async (req,res) =>{
+    const {toDelete} = req.body;
+    try {
+        const existingStudent = await Student.findOne(toDelete);
 
+        if (existingStudent) {
+            await Student.deleteOne(toDelete);
+            res.json({ delete: true });
+        } else {
+            res.json({ deleted: false, error: `Student to delete not found` });
+        }
+    } catch (error) {
+        console.error('Error updating student:', error);
+        res.json({ updated: false, error: 'An error occurred while deleting the student' });
+    }
+}
 
+const removeAllUser = async (req,res) => {
+    const result = await Student.deleteMany({});
+    if (result.deletedCount > 0) {
+        res.json({ deleted: true });
+    } else {
+        res.json({ deleted: false });
+    }
+}
 
-export {saveStudent, update, homepage}
+const user = async (req, res) => {
+    res.send()
+}
+
+export {saveStudent, update, removeUser, removeAllUser, user, homepage}

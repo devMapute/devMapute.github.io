@@ -42,10 +42,28 @@ import needle from 'needle';
 // });
 
 
-needle.post('http://localhost:3000/update', {fname: 'Mary Jane', newValues: {lname:'Jones', age:10}}, (err, res) => {
-  if (err) {
-    console.error(err);
-  } else {
-    console.log(res.body);
-  }
-});
+// needle.post('http://localhost:3000/update', {fname: 'Mary Jane', newValues: {lname:'Parker', age:21}}, (err, res) => {
+//   if (err) {
+//     console.error(err);
+//   } else {
+//     console.log(res.body);
+//   }
+// });
+
+// needle.post('http://localhost:3000/remove-user', {toDelete: {fname: "Bob"}}, (err, res) => {
+//   if (err) {
+//     console.error(err);
+//   } else {
+//     console.log(res.body);
+//   }
+// });
+
+// needle.post('http://localhost:3000/remove-all-user', {toDelete: {fname: "Bob"}}, (err, res) => {
+//   if (err) {
+//     console.error(err);
+//   } else {
+//     console.log(res.body);
+//   }
+// });
+
+
