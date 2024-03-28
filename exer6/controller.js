@@ -5,7 +5,7 @@ await mongoose.connect("mongodb://127.0.0.1:27017/StudentDatabase",{
 });
  
 const Student = mongoose.model('studentData',{
-    stdnum : Number,
+    stdnum : String,
     fname: String,
     lname: String,
     age: Number
@@ -20,7 +20,7 @@ const saveStudent = async (req, res) => {
     const { stdnum, fname, lname, age } = req.body;
 
     const newStudent = new Student({
-        stdnum: parseInt(stdnum), 
+        stdnum,
         fname, 
         lname, 
         age: parseInt(age)
