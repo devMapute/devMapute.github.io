@@ -67,3 +67,10 @@ import needle from 'needle';
 // });
 
 
+needle.get('http://localhost:3000/user?fname=Ben',(err, res) => {
+  if (err) {
+    console.error(err);
+  } else {
+    console.log(res.body);
+  }
+});
