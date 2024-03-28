@@ -1,23 +1,73 @@
-# Exercise 06: MongoDB
+# Project Title
+Student Management System
 
-## Full Name
-
+## Author
 Andrae Mapute
 
-## Degree Program
+## Code Description
+This project implements a user management system using Express, Mongoose, Needle, and MongoDB Compass. It provides endpoints to perform CRUD operations on student data stored in a MongoDB database.
 
-BS Computer Science
+## How to use
+1. Install Node.js and MongoDB Compass.
+2. Clone this repository.
+3. Run `npm install` to install dependencies.
+4. Start the server by running `npm start`.
+5. Use a tool like Postman or make HTTP requests directly to interact with the endpoints.
 
-## Live Website Link
+### Example Requests
+```javascript
+import needle from 'needle';
 
-Visit my portfolio [here](https://devmapute.github.io/).
+// Save a student
+needle.post('http://localhost:3000/save-student', { stdnum: 1, fname: "John", lname: "Lemons", age: 10 }, (err, res) => {
+  if (err) {
+    console.error(err);
+  } else {
+    console.log(res.body);
+  }
+});
 
+// Update a student
+needle.post('http://localhost:3000/update', {fname: 'Mary Jane', newValues: {lname:'Parker', age:21}}, (err, res) => {
+  if (err) {
+    console.error(err);
+  } else {
+    console.log(res.body);
+  }
+});
 
-## Key Takeaways
+// Remove a user
+needle.post('http://localhost:3000/remove-user', {toDelete: {fname: "Bob"}}, (err, res) => {
+  if (err) {
+    console.error(err);
+  } else {
+    console.log(res.body);
+  }
+});
 
-- Enhanced my HTML, CSS, and GitHub skills.
-- Learned the process of creating and hosting a personal portfolio website on GitHub Pages.
+// Remove all users
+needle.post('http://localhost:3000/remove-all-user', (err, res) => {
+  if (err) {
+    console.error(err);
+  } else {
+    console.log(res.body);
+  }
+});
 
----
+// Search for a user
+needle.get('http://localhost:3000/user?fname=Ben',(err, res) => {
+  if (err) {
+    console.error(err);
+  } else {
+    console.log(res.body);
+  }
+});
 
-_Created by Andrae Mapute for CMSC100 UV-3L Class Activity 2._
+// Get all users
+needle.get('http://localhost:3000/members',(err, res) => {
+  if (err) {
+    console.error(err);
+  } else {
+    console.log(res.body);
+  }
+});
